@@ -1,0 +1,5 @@
+relationship 84e446e2-a5bf-41a8-bfbf-3bcd9fd1827c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Vendas.'Data da Venda'
+	toColumn: LocalDateTable_dccf247d-5ef2-4c50-b1cb-28a4b8da7381.Date
+

@@ -1,0 +1,150 @@
+table Vendas
+	lineageTag: 011727ec-e257-4980-a27c-d7667a5f7c55
+
+	column 'Data da Venda'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a336c32a-7f11-493d-b4c3-60372586b89d
+		summarizeBy: none
+		sourceColumn: Data da Venda
+
+		variation Variation
+			isDefault
+			relationship: 84e446e2-a5bf-41a8-bfbf-3bcd9fd1827c
+			defaultHierarchy: LocalDateTable_dccf247d-5ef2-4c50-b1cb-28a4b8da7381.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Produto
+		dataType: string
+		lineageTag: 34f57abb-76f2-422a-ad0e-eb036b606476
+		summarizeBy: none
+		sourceColumn: Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria
+		dataType: string
+		lineageTag: 2361c3ab-09ae-4cf5-86f1-f203fb535f3a
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Cliente'
+		dataType: int64
+		formatString: 0
+		lineageTag: 99acd6fc-7c45-4688-80c0-bb2f95440544
+		summarizeBy: sum
+		sourceColumn: Codigo Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrecoUnitario
+		dataType: double
+		lineageTag: 5c2e873e-5811-4dd7-9f45-83005eaae33e
+		summarizeBy: sum
+		sourceColumn: PrecoUnitario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Custo Unitário'
+		dataType: double
+		lineageTag: e2c98486-26eb-4442-813d-c466dee4dce3
+		summarizeBy: sum
+		sourceColumn: Custo Unitário
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Marca
+		dataType: string
+		lineageTag: fead6f27-0cbb-490d-afa7-1b53e0760ddb
+		summarizeBy: none
+		sourceColumn: Marca
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Qtd. Vendida'
+		dataType: int64
+		formatString: 0
+		lineageTag: 167a75f3-7432-41bb-879f-1ed59fc49fd8
+		summarizeBy: sum
+		sourceColumn: Qtd. Vendida
+
+		annotation SummarizationSetBy = Automatic
+
+	column Faturamento
+		dataType: double
+		lineageTag: 4431aba9-c99d-4ecd-80d0-fa60c8a97768
+		summarizeBy: sum
+		sourceColumn: Faturamento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Custo Venda'
+		dataType: double
+		lineageTag: bfdb8b2c-5829-428f-854b-21e5c4cbd986
+		summarizeBy: sum
+		sourceColumn: Custo Venda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Lucro Venda'
+		dataType: double
+		lineageTag: 39d3db30-abee-4837-8308-9eef90fca87c
+		summarizeBy: sum
+		sourceColumn: Lucro Venda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column País
+		dataType: string
+		lineageTag: 6742527e-4bbe-4640-8729-a18c66baa4d5
+		summarizeBy: none
+		sourceColumn: País
+
+		annotation SummarizationSetBy = Automatic
+
+	column Continente
+		dataType: string
+		lineageTag: 21b6d8d9-3dfa-4f9b-8c6c-cd2f1cd64023
+		summarizeBy: none
+		sourceColumn: Continente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo da Venda'
+		dataType: string
+		lineageTag: 8304e08b-a0db-44fc-b42d-0262113e84e5
+		summarizeBy: none
+		sourceColumn: Tipo da Venda
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vendas = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("D:\PowerBI Projetos\Vendas 1.0\dados\Vendas.xlsx"), null, true),
+				    Vendas_Sheet = Fonte{[Item="Vendas",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Vendas_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Data da Venda", type date}, {"Produto", type text}, {"Categoria", type text}, {"Codigo Cliente", Int64.Type}, {"PrecoUnitario", type number}, {"Custo Unitário", type number}, {"Marca", type text}, {"Qtd. Vendida", Int64.Type}, {"Faturamento", type number}, {"Custo Venda", type number}, {"Lucro Venda", type number}, {"País", type text}, {"Continente", type text}, {"Tipo da Venda", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
