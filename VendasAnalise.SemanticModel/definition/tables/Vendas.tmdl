@@ -81,13 +81,14 @@ table Vendas
 
 	column Faturamento
 		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 4431aba9-c99d-4ecd-80d0-fa60c8a97768
 		summarizeBy: sum
 		sourceColumn: Faturamento
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	column 'Custo Venda'
 		dataType: double
