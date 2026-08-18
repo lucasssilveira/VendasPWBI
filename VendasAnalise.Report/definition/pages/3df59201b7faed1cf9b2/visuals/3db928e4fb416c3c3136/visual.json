@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "3db928e4fb416c3c3136",
   "position": {
-    "x": 969.726443768997,
+    "x": 984.31610942249245,
     "y": 83.647416413373861,
     "z": 4000,
     "height": 155.62310030395136,
@@ -223,5 +223,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "11f5c87d14d17ac0e250",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Vendas"
+                  }
+                },
+                "Property": "Codigo Cliente"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

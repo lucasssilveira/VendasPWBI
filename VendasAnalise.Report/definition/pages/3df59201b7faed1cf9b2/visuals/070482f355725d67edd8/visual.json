@@ -1,75 +1,38 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "1f22fa074851a8cb3bd0",
+  "name": "070482f355725d67edd8",
   "position": {
-    "x": 6.8085106382978724,
-    "y": 249.96960486322189,
-    "z": 6000,
-    "height": 155.62310030395136,
-    "width": 1264.4376899696049,
-    "tabOrder": 6000
+    "x": 425.04559270516717,
+    "y": 417.26443768996961,
+    "z": 6001,
+    "height": 294,
+    "width": 846,
+    "tabOrder": 6001
   },
   "visual": {
-    "visualType": "areaChart",
+    "visualType": "map",
     "query": {
       "queryState": {
         "Category": {
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Vendas"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Data da Venda"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
+                    "SourceRef": {
+                      "Entity": "Vendas"
                     }
                   },
-                  "Level": "Ano"
+                  "Property": "Continente"
                 }
               },
-              "queryRef": "Vendas.Data da Venda.Variation.Hierarquia de datas.Ano",
-              "nativeQueryRef": "Data da Venda Ano",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Vendas"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Data da Venda"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
-                    }
-                  },
-                  "Level": "Mês"
-                }
-              },
-              "queryRef": "Vendas.Data da Venda.Variation.Hierarquia de datas.Mês",
-              "nativeQueryRef": "Data da Venda Mês",
+              "queryRef": "Vendas.Continente",
+              "nativeQueryRef": "Continente",
               "active": true
             }
           ]
         },
-        "Y": {
+        "Size": {
           "projections": [
             {
               "field": {
@@ -88,11 +51,26 @@
                 }
               },
               "queryRef": "Sum(Vendas.Faturamento)",
-              "nativeQueryRef": "Faturamento"
+              "nativeQueryRef": "Soma de Faturamento"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "bubbles": [
+        {
+          "properties": {
+            "bubbleSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "23L"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -128,6 +106,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'center'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Faturamento por Continente'"
                 }
               }
             }
@@ -265,7 +250,21 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "52b8e60637b4752027e6",
+        "name": "8591e46b9524e9c6af52",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Vendas"
+              }
+            },
+            "Property": "Continente"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "908950d44eb87f8046bb",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -282,56 +281,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "824aece2ac46f822d3bf",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Vendas"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Data da Venda"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Ano"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b09d3dd6473c1088d0e1",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Vendas"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Data da Venda"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Mês"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
