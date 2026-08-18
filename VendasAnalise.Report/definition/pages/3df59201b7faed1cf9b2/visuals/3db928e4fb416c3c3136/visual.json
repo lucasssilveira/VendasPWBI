@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "2ed51c5403c444e9ba95",
+  "name": "3db928e4fb416c3c3136",
   "position": {
-    "x": 0,
+    "x": 951.24620060790278,
     "y": 83.647416413373861,
-    "z": 1,
+    "z": 4,
     "height": 155.62310030395136,
     "width": 286.93009118541033,
-    "tabOrder": 1
+    "tabOrder": 4
   },
   "visual": {
     "visualType": "cardVisual",
@@ -25,14 +25,14 @@
                           "Entity": "Vendas"
                         }
                       },
-                      "Property": "Faturamento"
+                      "Property": "Codigo Cliente"
                     }
                   },
-                  "Function": 0
+                  "Function": 2
                 }
               },
-              "queryRef": "Sum(Vendas.Faturamento)",
-              "nativeQueryRef": "Soma de Faturamento"
+              "queryRef": "Sum(Vendas.Codigo Cliente)",
+              "nativeQueryRef": "Contagem de Codigo Cliente"
             }
           ]
         }
@@ -49,10 +49,10 @@
                         "Entity": "Vendas"
                       }
                     },
-                    "Property": "Faturamento"
+                    "Property": "Codigo Cliente"
                   }
                 },
-                "Function": 0
+                "Function": 2
               }
             },
             "direction": "Descending"
@@ -151,7 +151,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Faturamento Total'"
+                  "Value": "'Qtde Clientes'"
                 }
               }
             },
@@ -227,7 +227,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "680c17e535d59de9e92e",
+        "name": "ada4901a3ee0ea590e98",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -237,10 +237,10 @@
                     "Entity": "Vendas"
                   }
                 },
-                "Property": "Faturamento"
+                "Property": "Codigo Cliente"
               }
             },
-            "Function": 0
+            "Function": 2
           }
         },
         "type": "Advanced"

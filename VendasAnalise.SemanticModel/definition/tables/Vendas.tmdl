@@ -102,13 +102,14 @@ table Vendas
 
 	column 'Lucro Venda'
 		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 39d3db30-abee-4837-8308-9eef90fca87c
 		summarizeBy: sum
 		sourceColumn: Lucro Venda
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	column País
 		dataType: string

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "2ed51c5403c444e9ba95",
+  "name": "4ea729f286cdad6c1430",
   "position": {
-    "x": 0,
+    "x": 622.49240121580544,
     "y": 83.647416413373861,
-    "z": 1,
+    "z": 3,
     "height": 155.62310030395136,
     "width": 286.93009118541033,
-    "tabOrder": 1
+    "tabOrder": 3
   },
   "visual": {
     "visualType": "cardVisual",
@@ -25,14 +25,14 @@
                           "Entity": "Vendas"
                         }
                       },
-                      "Property": "Faturamento"
+                      "Property": "Lucro Venda"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(Vendas.Faturamento)",
-              "nativeQueryRef": "Soma de Faturamento"
+              "queryRef": "Sum(Vendas.Lucro Venda)",
+              "nativeQueryRef": "Soma de Lucro Venda"
             }
           ]
         }
@@ -49,7 +49,7 @@
                         "Entity": "Vendas"
                       }
                     },
-                    "Property": "Faturamento"
+                    "Property": "Lucro Venda"
                   }
                 },
                 "Function": 0
@@ -151,7 +151,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Faturamento Total'"
+                  "Value": "'Lucro Total'"
                 }
               }
             },
@@ -227,7 +227,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "680c17e535d59de9e92e",
+        "name": "011844c8e3dca980b284",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -237,7 +237,7 @@
                     "Entity": "Vendas"
                   }
                 },
-                "Property": "Faturamento"
+                "Property": "Lucro Venda"
               }
             },
             "Function": 0
