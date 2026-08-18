@@ -1,19 +1,38 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "3db928e4fb416c3c3136",
+  "name": "76932a9a8feea63e15f9",
   "position": {
-    "x": 969.726443768997,
-    "y": 83.647416413373861,
-    "z": 4000,
-    "height": 155.62310030395136,
-    "width": 286.93009118541033,
-    "tabOrder": 4000
+    "x": 6.8085106382978724,
+    "y": 417.26443768996961,
+    "z": 5000,
+    "height": 293.73860182370822,
+    "width": 403.64741641337389,
+    "tabOrder": 5000
   },
   "visual": {
-    "visualType": "cardVisual",
+    "visualType": "barChart",
     "query": {
       "queryState": {
-        "Data": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Vendas"
+                    }
+                  },
+                  "Property": "Marca"
+                }
+              },
+              "queryRef": "Vendas.Marca",
+              "nativeQueryRef": "Contagem de Marca",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
           "projections": [
             {
               "field": {
@@ -25,14 +44,14 @@
                           "Entity": "Vendas"
                         }
                       },
-                      "Property": "Codigo Cliente"
+                      "Property": "Faturamento"
                     }
                   },
-                  "Function": 2
+                  "Function": 0
                 }
               },
-              "queryRef": "Sum(Vendas.Codigo Cliente)",
-              "nativeQueryRef": "Contagem de Codigo Cliente"
+              "queryRef": "Sum(Vendas.Faturamento)",
+              "nativeQueryRef": "Soma de Faturamento"
             }
           ]
         }
@@ -49,10 +68,10 @@
                         "Entity": "Vendas"
                       }
                     },
-                    "Property": "Codigo Cliente"
+                    "Property": "Faturamento"
                   }
                 },
-                "Function": 2
+                "Function": 0
               }
             },
             "direction": "Descending"
@@ -62,36 +81,7 @@
       }
     },
     "objects": {
-      "divider": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "fillCustom": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "shadowCustom": [
+      "labels": [
         {
           "properties": {
             "show": {
@@ -101,13 +91,10 @@
                 }
               }
             }
-          },
-          "selector": {
-            "id": "default"
           }
         }
       ],
-      "label": [
+      "valueAxis": [
         {
           "properties": {
             "show": {
@@ -116,28 +103,32 @@
                   "Value": "false"
                 }
               }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
-          },
-          "selector": {
-            "id": "default"
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]
     },
     "visualContainerObjects": {
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
       "title": [
         {
           "properties": {
@@ -148,10 +139,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Qtde Clientes'"
+                  "Value": "true"
                 }
               }
             },
@@ -177,7 +168,48 @@
           }
         }
       ],
-      "border": [
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "spaceAbovePlotArea": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "spaceAboveDivider": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "spaceAboveSubtitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
         {
           "properties": {
             "show": {
@@ -187,10 +219,23 @@
                 }
               }
             },
-            "radius": {
+            "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "15D"
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
@@ -204,11 +249,38 @@
                   }
                 }
               }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
       ],
       "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
         {
           "properties": {
             "show": {

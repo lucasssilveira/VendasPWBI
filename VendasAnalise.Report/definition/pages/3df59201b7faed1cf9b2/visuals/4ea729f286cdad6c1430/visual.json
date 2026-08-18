@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "4ea729f286cdad6c1430",
   "position": {
-    "x": 622.49240121580544,
+    "x": 640,
     "y": 83.647416413373861,
-    "z": 3,
+    "z": 3000,
     "height": 155.62310030395136,
     "width": 286.93009118541033,
-    "tabOrder": 3
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -223,28 +223,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "011844c8e3dca980b284",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Vendas"
-                  }
-                },
-                "Property": "Lucro Venda"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

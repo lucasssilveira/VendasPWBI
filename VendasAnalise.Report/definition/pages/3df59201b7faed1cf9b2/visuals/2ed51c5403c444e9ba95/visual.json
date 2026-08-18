@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 83.647416413373861,
-    "z": 1,
+    "z": 1000,
     "height": 155.62310030395136,
     "width": 286.93009118541033,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -227,7 +227,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "680c17e535d59de9e92e",
+        "name": "761740cc0a2e2a8649ee",
         "field": {
           "Aggregation": {
             "Expression": {

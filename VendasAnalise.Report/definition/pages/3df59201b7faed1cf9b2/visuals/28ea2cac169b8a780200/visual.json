@@ -4,10 +4,10 @@
   "position": {
     "x": 309.30091185410333,
     "y": 83.647416413373861,
-    "z": 2,
+    "z": 2000,
     "height": 155.62310030395136,
     "width": 286.93009118541033,
-    "tabOrder": 2
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -223,28 +223,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "78f43f5c587c0d25ab2d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Vendas"
-                  }
-                },
-                "Property": "Qtd. Vendida"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
